@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 0.1em;
+}
+
+.fullPage {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    top: 0;
+    left: 0;
+    background-color: #292931;
+    color: #FFFFFE;
+}
+
+.page_title {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-weight: 500;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.05);
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/*Start Page*/
+
+.startPage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: #212129;
+    transition: top 1.25s cubic-bezier(1, 0.01, 0, 1.01);
+}
+
+.hide {
+    top: -100vh;
+}
+
+.startPage .loader {
+    width: 600px;
+    height: 50px;
+    border: 3px solid #FFFFFE;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loader .progress {
+    font-size: 40px;
+    z-index: 1001;
+}
+
+.loader .progress_bar {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #FF002F;
+}
+
+
+/*Wrapper*/
+
+.wrapper {
+    height: 400vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    transition: top 1.25s cubic-bezier(1, 0.01, 0, 1.01);
+}
+
+.goToAbout {
+    top: 0;
+}
+
+.goToSkills {
+    top: -100vh;
+}
+
+.goToWorks {
+    top: -200vh;
+}
+
+.goToContacts {
+    top: -300vh;
+}
+
+
+/*Nav Menu*/
+
+.menu {
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0;
+    z-index: 100;
+    left: 0;
+    top: 0;
+}
+
+.menu label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(-1);
+    writing-mode: vertical-lr;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    transition: color 0.75s ease-in-out;
+    cursor: pointer;
+}
+
+.menu .active {
+    color: #FF002F;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+    padding-left: 120px;
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.first .firstText {
+    font-size: 60px;
+}
+
+.first .firstText span {
+    color: #FF002F;
+}
+
+.first .secondText {
+    font-size: 30px;
+    margin-top: 20px;
+    max-width: 1200px;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.first .touchableLetter1,
+.first .touchableLetter2,
+.first .touchableLetter3 {
+    display: inline-block;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.first .touchableLetter1:hover,
+.first .touchableLetter2:hover,
+.first .touchableLetter3:hover {
+    filter: blur(4px);
+    color: #FF002F;
+    transition: all 0s ease-in-out;
+}
+
+.first .touchableLetter1:hover {
+    transform: translateY(-30px);
+}
+
+.first .touchableLetter2:hover {
+    transform: translateY(30px);
+}
+
+.first .touchableLetter3:hover {
+    transform: translateX(-30px);
+}
+
+.first .thirdText {
+    margin-top: 20px;
+    opacity: 13%;
+    font-size: 25px;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.second .firstText {
+    font-size: 60px;
+}
+
+.second .secondText {
+    font-size: 30px;
+    margin-top: 20px;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.second .secondText span {
+    position: relative;
+}
+
+.second .secondText span .text {
+    transition: color 0.5s ease-in-out;
+}
+
+.second .secondText span .text:hover {
+    color: #FF002F;
+}
+
+.second .secondText span .text:hover+.popup {
+    bottom: -330px;
+    opacity: 1;
+}
+
+.second .secondText span .popup {
+    position: absolute;
+    left: 0;
+    width: 700px;
+    height: fit-content;
+    bottom: -360px;
+    opacity: 0;
+    z-index: 100;
+    color: #FFFFFE;
+    background-color: #FF002F;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.second .secondText .JS .popup {
+    bottom: -370px;
+}
+
+.second .secondText .JS .text:hover+.popup {
+    bottom: -330px;
+}
+
+.second .secondText span .popup::before {
+    position: absolute;
+    top: -22px;
+    border-radius: 5px;
+    left: 25px;
+    background-color: #FF002F;
+    content: '';
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+}
+
+.second .secondText span .popup .title {
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.second .thirdText {
+    margin-top: 20px;
+    opacity: 13%;
+    font-size: 25px;
+}
+
+.third {}
+
+.fourth {}

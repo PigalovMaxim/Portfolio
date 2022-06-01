@@ -129,4 +129,4 @@ VANTA.WAVES({
     zoom: 0.65
 })
 separateFirstPageText();
-//loader();
+loader();

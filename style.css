@@ -324,7 +324,77 @@ body {
     font-size: 25px;
 }
 
-.third {}
+.third {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 200px;
+}
+
+.third .cards {
+    width: 100%;
+}
+
+.third .cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    height: 320px;
+}
+
+.third .cards .card:hover .image img {
+    border-radius: 10px;
+    opacity: 0.35;
+}
+
+.third .cards .card:hover .image .number {
+    opacity: 1;
+    bottom: 10px;
+}
+
+.third .cards .card:hover .text {
+    color: rgb(247, 247, 247);
+    letter-spacing: 0.1em;
+    padding-left: 0px;
+}
+
+.third .cards .card .text {
+    font-size: 35px;
+    margin-top: 10px;
+    letter-spacing: 1.5em;
+    padding-left: 50px;
+    color: rgba(247, 247, 247, 0.082);
+    transition: all 0.75s ease-in-out;
+}
+
+.third .cards .card .image {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 10px;
+    background-color: black;
+    transition: background-color 0.75s ease-in-out;
+}
+
+.third .cards .card .image .number {
+    position: absolute;
+    font-weight: 600;
+    color: #FFFFFE;
+    bottom: 0px;
+    opacity: 0;
+    left: 10px;
+    transition: all 0.75s ease-in-out;
+    font-size: 50px;
+}
+
+.third .cards .card .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
 
 .fourth {
     display: flex;
@@ -333,7 +403,7 @@ body {
     align-items: center;
 }
 
-.cardsWrapper {
+.fourth .cardsWrapper {
     height: 300px;
     width: 300px;
     display: flex;
@@ -344,7 +414,7 @@ body {
     z-index: 2;
 }
 
-.card {
+.fourth .cardsWrapper .card {
     height: 400px;
     width: 300px;
     display: inline-block;
@@ -358,19 +428,19 @@ body {
     padding: 20px 20px;
 }
 
-.cardsWrapper:hover #i1 {
+.fourth .cardsWrapper:hover #i1 {
     left: 110%;
     top: -15%;
     transform: rotateY(0deg) rotateZ(0deg) rotateX(0deg);
 }
 
-.cardsWrapper:hover #i2 {
+.fourth .cardsWrapper:hover #i2 {
     left: 0%;
     top: -15%;
     transform: rotateY(0deg) rotateZ(0deg) rotateX(0deg);
 }
 
-.cardsWrapper:hover #i3 {
+.fourth .cardsWrapper:hover #i3 {
     left: -110%;
     top: -15%;
     transform: rotateY(0deg) rotateZ(0deg) rotateX(0deg);
@@ -398,7 +468,7 @@ body {
     opacity: 1;
 }
 
-.matter {
+.fourth .matter {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -408,18 +478,18 @@ body {
     transition: all 0.5s ease;
 }
 
-.matter .title {
+.fourth .matter .title {
     color: #FF002F;
     margin-top: 40px;
     font-weight: 600;
 }
 
-.matter img {
+.fourth .matter img {
     width: 150px;
     height: 150px;
 }
 
-.matter .link {
+.fourth .matter .link {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -434,7 +504,7 @@ body {
     transition: background-color 0.5s ease-in-out;
 }
 
-.matter .link:hover {
+.fourth .matter .link:hover {
     background-color: #b90325;
 }
 

@@ -1,4 +1,11 @@
 const wrapper = document.querySelector('.wrapper');
+const cursor = document.getElementById('cursor');
+const aura = document.getElementById('aura');
+let mouseX = 0;
+let mouseY = 0;
+let posX = 0;
+let posY = 0;
+let canChangePage = true;
 loader = () => {
     let progressBar = document.querySelector('.progress_bar');
     let progress = document.querySelector('.progress');
@@ -15,12 +22,55 @@ loader = () => {
         }
     }, 40);
 };
+document.querySelectorAll('.mouseLink').forEach(link => {
+    link.addEventListener('mouseover', () => {
+        cursor.classList.add('activeCursor');
+        aura.classList.add('activeCursor');
+    });
+    link.addEventListener('mouseout', () => {
+        cursor.classList.remove('activeCursor');
+        aura.classList.remove('activeCursor');
+    });
+});
+window.addEventListener('mousemove', e => {
+    getMouseCoords(e);
+    cursor.classList.remove('hiddenCursor');
+    aura.classList.remove('hiddenCursor');
+});
+window.addEventListener('mouseout', () => {
+    cursor.classList.add('hiddenCursor');
+    aura.classList.add('hiddenCursor');
+});
 document.getElementById('About').addEventListener('click', () => goToPage('About'));
 document.getElementById('Skills').addEventListener('click', () => goToPage('Skills'));
 document.getElementById('Works').addEventListener('click', () => goToPage('Works'));
 document.getElementById('Contacts').addEventListener('click', () => goToPage('Contacts'));
 
+function getMouseCoords(e) {
+    mouseX = e.pageX - 3;
+    mouseY = e.pageY - 3;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+}
+
+gsap.to({}, 0.01, {
+    repeat: -1,
+    onRepeat: () => {
+        posX += (mouseX - posX) / 3;
+        posY += (mouseY - posY) / 3;
+        gsap.set(aura, {
+            css: {
+                left: posX - 24,
+                top: posY - 24
+            }
+        });
+    }
+});
+
 function goToPage(page) {
+    if (!canChangePage) return;
+    canChangePage = false;
+    setTimeout(() => canChangePage = true, 700);
     (page === 'About') ? wrapper.classList.add('goToAbout'): wrapper.classList.remove('goToAbout');
     (page === 'Skills') ? wrapper.classList.add('goToSkills'): wrapper.classList.remove('goToSkills');
     (page === 'Works') ? wrapper.classList.add('goToWorks'): wrapper.classList.remove('goToWorks');
@@ -48,7 +98,7 @@ function printBGText(text) {
             clearInterval(interval);
             return;
         }
-    }, 100);
+    }, 50);
 }
 
 function separateFirstPageText() {
@@ -63,5 +113,20 @@ function separateFirstPageText() {
         if (letter === ',') secondTextBlock.innerHTML += '<br/>';
     });
 }
+VANTA.WAVES({
+    el: "#waveBG",
+    mouseControls: false,
+    touchControls: true,
+    gyroControls: true,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x20202,
+    shininess: 11.00,
+    waveHeight: 8.50,
+    waveSpeed: 0.45,
+    zoom: 0.65
+})
 separateFirstPageText();
-loader();
+//loader();

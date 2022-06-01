@@ -13,18 +13,20 @@
 </head>
 
 <body>
-    <div class="fullPage">
-        <div class="startPage">
+    <div id="cursor"></div>
+    <div id="aura"></div>
+    <div id="waveBG" class="fullPage">
+        <!-- <div class="startPage">
             <div class="loader">
                 <div class="progress_bar"></div>
                 <label class="progress">0%</label>
             </div>
-        </div>
+        </div> -->
         <nav class="menu">
-            <label id="About" class="active">Обо мне</label>
-            <label id="Skills">Мои навыки</label>
-            <label id="Works">Мои работы</label>
-            <label id="Contacts">Контакты</label>
+            <label id="About" class="mouseLink active">Обо мне</label>
+            <label id="Skills" class="mouseLink">Мои навыки</label>
+            <label id="Works" class="mouseLink">Мои работы</label>
+            <label id="Contacts" class="mouseLink">Контакты</label>
         </nav>
         <label class="page_title">Обо мне</label>
         <div class="wrapper">
@@ -40,30 +42,54 @@
                     На данный момент я владею:
                     <br/>
                     <span class="React">
-                        <label class="text">React</label>
+                        <label class="text mouseLink">React</label>
                         <div class="popup">
                             <label class="title">React</label>
                             <label class="desc">Этот фреймворк я изучаю около 1.5 года, чаще всего использую в паре с роутингом, в последнее время на нём я делаю все сайты</label>
                         </div>
                     </span>,
                     <span class="JS">
-                        <label class="text">JS (ES5, ES6)</label>
+                        <label class="text mouseLink">JS (ES5, ES6)</label>
                         <div class="popup">
                             <label class="title">JavaScript</label>
-                            <label class="desc">Изучением JS я занялся на 1 курсе, с тех пор это мой любимый язык программирования. <br/> Освоил синтаксисы ES5/ES6, асинхронное программирование</label>
+                            <label class="desc">Изучением JS я занялся на 1 курсе, с тех пор это мой любимый язык программирования. <br/> Освоил синтаксисы ES5/ES6 и асинхронное программирование</label>
                         </div>
                     </span>,
                     <span class="TS">
-                        <label class="text">TS</label>
+                        <label class="text mouseLink">TS</label>
                         <div class="popup">
                             <label class="title">TypeScript</label>
                             <label class="desc">О нём особо нечего рассказывать, изучаю полгода, могу типизировать переменные</label>
                         </div>
                     </span>,
-                    <span class="CSS">CSS</span>,
-                    <span class="HTML">HTML5</span>,
-                    <span class="SCSS">SCSS</span>,
-                    <span class="Node">NodeJS (+express)</span>
+                    <span class="CSS">
+                        <label class="text mouseLink">CSS</label>
+                        <div class="popup">
+                            <label class="title">CSS</label>
+                            <label class="desc">Стараюсь создавать прекрасное, могу создавать весьма сложные макеты. Умею делать адаптивный сайт под все устройства</label>
+                        </div>
+                    </span>,
+                    <span class="HTML">
+                        <label class="text mouseLink">HTML5</label>
+                        <div class="popup">
+                            <label class="title">HTML5</label>
+                            <label class="desc">Умею работать с canvas, есть умения в плане семантической вёрстки и знания семантических тегов</label>
+                        </div>
+                    </span>,
+                    <span class="SCSS">
+                        <label class="text mouseLink">SCSS</label>
+                        <div class="popup">
+                            <label class="title">SCSS</label>
+                            <label class="desc">Использую его для более сложных проектов, когда нужно писать много CSS кода. Умею использовать миксины и функции для вычисления</label>
+                        </div>
+                    </span>,
+                    <span class="Node">
+                        <label class="text mouseLink">NodeJS (+express)</label>
+                        <div class="popup">
+                            <label class="title">NodeJS</label>
+                            <label class="desc">Чуть-чуть умею в бекенд, могу разрабатывать небольшие приложения с помощью express и sqlite3</label>
+                        </div>
+                    </span>,
                 </div>
                 <label class="thirdText">Наведи на слово</label>
             </div>
@@ -71,7 +97,9 @@
             <div class="page fourth">Контакты</div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="three.r119.min.js"></script>
+    <script src="vanta.waves.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js"></script>
 </body>
 

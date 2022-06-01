@@ -1,4 +1,7 @@
 const wrapper = document.querySelector('.wrapper');
+const lettersWrapper = document.querySelector('.letters');
+let letters = [];
+let canPressKey = false;
 const cursor = document.getElementById('cursor');
 const aura = document.getElementById('aura');
 let mouseX = 0;
@@ -18,6 +21,8 @@ loader = () => {
         if (i === 101) {
             clearInterval(interval);
             startPage.classList.add('hide');
+            animateWordsAbout();
+            canPressKey = true;
             return;
         }
     }, 40);
@@ -41,6 +46,16 @@ window.addEventListener('mouseout', () => {
     cursor.classList.add('hiddenCursor');
     aura.classList.add('hiddenCursor');
 });
+window.addEventListener('keydown', (e) => {
+    if (!canPressKey) return;
+    const rand = Math.round(Math.random() * letters.length);
+    letters[rand].classList.add('playAnim');
+    letters[rand].style.color = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
+    letters[rand].innerHTML = e.key;
+    setTimeout(() => {
+        letters[rand].classList.remove('playAnim');
+    }, 1000);
+});
 document.getElementById('About').addEventListener('click', () => goToPage('About'));
 document.getElementById('Skills').addEventListener('click', () => goToPage('Skills'));
 document.getElementById('Works').addEventListener('click', () => goToPage('Works'));
@@ -52,7 +67,6 @@ function getMouseCoords(e) {
     cursor.style.left = mouseX + 'px';
     cursor.style.top = mouseY + 'px';
 }
-
 gsap.to({}, 0.01, {
     repeat: -1,
     onRepeat: () => {
@@ -113,6 +127,44 @@ function separateFirstPageText() {
         if (letter === ',') secondTextBlock.innerHTML += '<br/>';
     });
 }
+
+function generateLetters() {
+    for (let i = 2; i < 99; i++) {
+        const elem = '<label style="left: ' + i + '%" class="keyboardLetter">A</label>';
+        lettersWrapper.innerHTML += elem;
+    }
+    letters = document.querySelectorAll('.keyboardLetter');
+}
+
+function animateWordsAbout() {
+    gsap.fromTo(".firstText", {
+        marginLeft: 100,
+        opacity: 0
+    }, {
+        delay: 1,
+        duration: 0.75,
+        marginLeft: 0,
+        opacity: 1
+    });
+    gsap.fromTo(".secondText", {
+        marginLeft: 100,
+        opacity: 0
+    }, {
+        delay: 1.3,
+        duration: 0.75,
+        marginLeft: 0,
+        opacity: 1
+    });
+    gsap.fromTo(".thirdText", {
+        marginLeft: 100,
+        opacity: 0
+    }, {
+        delay: 1.6,
+        duration: 0.75,
+        marginLeft: 0,
+        opacity: 0.13
+    });
+}
 VANTA.WAVES({
     el: "#waveBG",
     mouseControls: false,
@@ -129,4 +181,5 @@ VANTA.WAVES({
     zoom: 0.65
 })
 separateFirstPageText();
+generateLetters();
 loader();

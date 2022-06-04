@@ -84,7 +84,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    background-color: #212129;
+    background-color: #0c0c0c;
     transition: top 1.25s cubic-bezier(1, 0.01, 0, 1.01);
 }
 
@@ -279,7 +279,7 @@ body {
 }
 
 .second .secondText span .text:hover+.popup {
-    bottom: -350px;
+    bottom: -390px;
     opacity: 1;
 }
 
@@ -287,8 +287,8 @@ body {
     position: absolute;
     left: 0;
     width: 700px;
-    height: 300px;
-    bottom: -390px;
+    height: 350px;
+    bottom: -440px;
     opacity: 0;
     z-index: 102;
     color: #FFFFFE;

@@ -266,57 +266,57 @@ body {
     position: relative;
 }
 
-.second .secondText span {
-    position: relative;
-}
+    .second .secondText span {
+        position: relative;
+    }
 
-.second .secondText span .text {
-    transition: color 0.5s ease-in-out;
-}
+    .second .secondText span .text {
+        transition: color 0.5s ease-in-out;
+    }
 
-.second .secondText span .text:hover {
-    color: #FF002F;
-}
+    .second .secondText span .text:hover {
+        color: #FF002F;
+    }
 
-.second .secondText span .text:hover+.popup {
-    bottom: -390px;
-    opacity: 1;
-}
+    .second .secondText span .text:hover+.popup {
+        bottom: -390px;
+        opacity: 1;
+    }
 
-.second .secondText span .popup {
-    position: absolute;
-    left: 0;
-    width: 700px;
-    height: 350px;
-    bottom: -440px;
-    opacity: 0;
-    z-index: 102;
-    color: #FFFFFE;
-    background-color: #FF002F;
-    padding: 20px;
-    border-radius: 10px;
-    transition: all 0.5s ease-in-out;
-    display: flex;
-    flex-direction: column;
-}
+    .second .secondText span .popup {
+        position: absolute;
+        left: 0;
+        width: 700px;
+        height: 350px;
+        bottom: -440px;
+        opacity: 0;
+        z-index: 102;
+        color: #FFFFFE;
+        background-color: #FF002F;
+        padding: 20px;
+        border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+    }
 
-.second .secondText span .popup::before {
-    position: absolute;
-    top: -22px;
-    border-radius: 5px;
-    left: 25px;
-    background-color: #FF002F;
-    content: '';
-    width: 50px;
-    height: 50px;
-    transform: rotate(45deg);
-}
+    .second .secondText span .popup::before {
+        position: absolute;
+        top: -22px;
+        border-radius: 5px;
+        left: 25px;
+        background-color: #FF002F;
+        content: '';
+        width: 50px;
+        height: 50px;
+        transform: rotate(45deg);
+    }
 
-.second .secondText span .popup .title {
-    font-size: 45px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
+    .second .secondText span .popup .title {
+        font-size: 45px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
 
 .second .thirdText {
     margin-top: 20px;
@@ -334,6 +334,8 @@ body {
 
 .third .cards {
     width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .third .cards .card {
@@ -343,6 +345,7 @@ body {
     align-items: center;
     width: 400px;
     height: 320px;
+    margin-right: 50px;
 }
 
 .third .cards .card:hover .image img {

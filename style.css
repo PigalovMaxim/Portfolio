@@ -348,7 +348,7 @@ body {
     margin-right: 50px;
 }
 
-.third .cards .card:hover .image img {
+.third .cards .card:hover .image .bg {
     border-radius: 10px;
     opacity: 0.35;
 }
@@ -358,19 +358,47 @@ body {
     bottom: 10px;
 }
 
-.third .cards .card:hover .text {
+.third .cards .card:hover .text .title {
     color: rgb(247, 247, 247);
     letter-spacing: 0.1em;
     padding-left: 0px;
 }
 
 .third .cards .card .text {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.third .cards .card .text .title{
     font-size: 35px;
     margin-top: 10px;
     letter-spacing: 1.5em;
     padding-left: 50px;
     color: rgba(247, 247, 247, 0.082);
     transition: all 0.75s ease-in-out;
+}
+
+.third .cards .card .text .first_instrument, .third .cards .card .text .second_instrument {
+    position: absolute;
+    color: #FFFFFE;
+    top: 0;
+    font-size: 24px;
+    transition: all 0.75s ease-in-out;
+    opacity: 0;
+}
+
+.third .cards .card:hover .text .first_instrument{
+    top: 70px;
+    opacity: 1;
+}
+
+.third .cards .card:hover .text .second_instrument{
+    top: 120px;
+    opacity: 1;
 }
 
 .third .cards .card .image {
@@ -393,10 +421,11 @@ body {
     font-size: 50px;
 }
 
-.third .cards .card .image img {
+.third .cards .card .image .bg {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    transition: all 0.75s ease-in-out;
 }
 
 .fourth {

@@ -88,6 +88,11 @@ body {
     transition: top 1.25s cubic-bezier(1, 0.01, 0, 1.01);
 }
 
+.startPage .title {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
 .hide {
     top: -100vh;
 }
